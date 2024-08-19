@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Tapete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Detalhes do Tapete</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/catalog">Catálogo</a></li>
+            <li><a href="/contact">Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <img src="{{ url_for('static', filename='images/tapete1.jpg') }}" alt="Tapete 1">
+        <h2>Tapete 1</h2>
+        <p>Descrição detalhada do Tapete 1.</p>
+        <p>Preço: R$100,00</p>
+        <p><a href="/contact">Entre em contato para comprar</a></p>
+    </main>
+    <footer>
+        <p>© 2024 Catálogo de Tapetes</p>
+    </footer>
+</body>
+</html>

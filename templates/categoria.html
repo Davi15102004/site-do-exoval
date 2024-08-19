@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria - {{ categoria | capitalize }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Rosa Tapetes Artesanais</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/catalog">Catálogo</a></li>
+            <li><a href="/contact">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <main>
+            <h2>Jogos de Tapete para {{ categoria | capitalize }}</h2>
+            <ul>
+                {% for tapete in tapetes %}
+                <li>
+                    <h3>{{ tapete.nome }}</h3>
+                    <p>{{ tapete.descricao }}</p>
+                    <p>Preço: {{ tapete.preco }}</p>
+                </li>
+                {% else %}
+                <p>Não há tapetes nesta categoria.</p>
+                {% endfor %}
+            </ul>
+        </main>
+    </div>
+    <footer>
+        <p>© 2024 Catálogo de Tapetes</p>
+    </footer>
+</body>
+</html>
+

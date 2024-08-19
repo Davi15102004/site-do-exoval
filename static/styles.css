@@ -1,0 +1,192 @@
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0; /* Cor de fundo opcional */
+    position: relative; /* Permite a posição fixa das barras laterais */
+}
+
+/* Container centralizado */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 20px; /* Espaçamento interno do container */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #f4a460;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilos da navegação */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    text-align: center;
+    width: 100%;
+}
+
+nav ul li {
+    display: inline-block; /* Corrigido para alinha os itens corretamente */
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Estilos principais */
+main {
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 4rem; /* Espaço para o rodapé */
+    width: 100%; /* Garantir que o main use a largura total do container */
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: #f4a460;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Barras laterais */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Largura das barras laterais */
+    background-color: #f4a460; /* Cor das barras laterais */
+    z-index: -1; /* Coloca atrás do conteúdo */
+}
+
+body::before {
+    left: 0; /* Barra lateral esquerda */
+}
+
+body::after {
+    right: 0; /* Barra lateral direita */
+}
+
+/* Estilos da página de catálogo */
+.catalog-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.catalog-links li {
+    margin: 1rem 0; /* Espaçamento entre itens */
+}
+
+.catalog-links a {
+    display: block;
+    padding: 1rem;
+    background-color: #ffffff; /* Cor de fundo dos links */
+    color: #333; /* Cor do texto dos links */
+    text-decoration: none;
+    border: 2px solid #f4a460; /* Borda dos links */
+    border-radius: 8px; /* Cantos arredondados */
+    transition: all 0.3s ease; /* Transição suave para efeitos de hover */
+}
+
+.catalog-links a:hover {
+    background-color: #f4a460; /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+    border-color: #f4a460; /* Cor da borda ao passar o mouse */
+}
+
+/* Estilos para a página de contato */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9; /* Cor de fundo para a seção principal */
+    border-radius: 8px; /* Arredondamento das bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da seção */
+}
+
+main h2 {
+    color: #333; /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+main p {
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    margin-bottom: 10px; /* Espaço abaixo de cada parágrafo */
+}
+
+main a {
+    color: #007bff; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Torna o texto dos links negrito */
+}
+
+main a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o link */
+    color: #0056b3; /* Cor do link ao passar o mouse */
+}
+
+/* Estilos gerais para tornar o site responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espaçamento vertical entre os itens */
+    }
+
+    footer {
+        position: relative; /* Remove a fixação do footer em telas pequenas */
+    }
+}
+
+/* Ajustes específicos para orientação vertical */
+@media (orientation: portrait) {
+    body::before, body::after {
+        width: 10px; /* Ajusta a largura das barras laterais para orientação vertical */
+    }
+
+    nav ul {
+        flex-direction: column; /* Alinha os itens verticalmente em orientação vertical */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espaçamento vertical entre os itens */
+    }
+
+    .container {
+        padding: 0 10px; /* Reduz o padding do container em telas pequenas */
+    }
+
+    main {
+        padding: 10px; /* Reduz o padding da área principal em telas pequenas */
+    }
+}
